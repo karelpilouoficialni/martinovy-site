@@ -385,11 +385,11 @@ const ALL_TASKS = [
    EMOTION SYSTEM
 ═══════════════════════════════════════════ */
 const EMOTIONS = {
-  furious:  { label:"😤 FURIOUS",  color:"var(--furious)", comment: ["„To je katastrofa! Přečti si učebnici 10×!"","„Packet Tracer pláče, já taky."","„Jsi poslední, kdo by měl konfigurovat síť.""] },
-  angry:    { label:"😠 ANGRY",    color:"var(--angry)",   comment: ["„Tohle nás fakt trápí... Zkus znovu."","„Příšerný výsledek. Kde jsi byl na přednáškách?"","„Packet Tracer se stydí."] },
-  medium:   { label:"😐 MEDIUM",   color:"var(--medium)",  comment: ["„Ujde to, ale mohl bys lépe."","„Průměr. Cisco čeká víc."","„Ani špatné, ani dobré. Zkus víc."] },
-  good:     { label:"😊 GOOD",     color:"var(--good)",    comment: ["„Hezky! Cisco by tě pochválilo."","„To se mi líbí. Pokračuj takhle!"","„Dobrá práce, ale excellence ještě čeká."] },
-  excellent:{ label:"🤩 EXCELLENT",color:"var(--excellent)",comment: ["„BRILLIANT! Jsi Cisco Packet Tracer MASTER!"","„Packet Tracer se raduje! Skvělý výkon!"","„Tohle je ten výkon, pro který se žije!"] },
+  furious:  { label: "😤 FURIOUS",  color: "var(--furious)", comment: ["To je katastrofa! Přečti si učebnici 10×!","Packet Tracer pláče, já taky.","Jsi poslední, kdo by měl konfigurovat síť."] },
+  angry:    { label: "😠 ANGRY",    color: "var(--angry)",   comment: ["Tohle nás fakt trápí... Zkus znovu.","Příšerný výsledek. Kde jsi byl na přednáškách?","Packet Tracer se stydí."] },
+  medium:   { label: "😐 MEDIUM",   color: "var(--medium)",  comment: ["Ujde to, ale mohl bys lépe.","Průměr. Cisco čeká víc.","Ani špatné, ani dobré. Zkus víc."] },
+  good:     { label: "😊 GOOD",     color: "var(--good)",    comment: ["Hezky! Cisco by tě pochválilo.","To se mi líbí. Pokračuj takhle!","Dobrá práce, ale excellence ještě čeká."] },
+  excellent:{ label: "🤩 EXCELLENT",color: "var(--excellent)",comment: ["BRILLIANT! Jsi Cisco Packet Tracer MASTER!","Packet Tracer se raduje! Skvělý výkon!","Tohle je ten výkon, pro který se žije!"] },
 };
 
 function getEmotion(pct) {
