@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuriTrace — Cisco Packet Tracer Hra</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="buritrace.css">
+</head>
+<body>
+<div class="scanline"></div>
+
+<!-- MENU -->
+<div id="screen-menu" class="screen active">
+  <div class="logo-wrap">
+    <div class="logo-title">BuriTrace</div>
+    <div class="logo-sub">Cisco Packet Tracer • Interactive Training</div>
+  </div>
+
+  <div class="mascot-teaser-placeholder" id="menu-mascot">
+    <div class="placeholder-icon">🧑‍🏫</div>
+    <div>Martin Buriánek</div>
+    <div style="font-size:0.55rem;margin-top:2px;">[ sem vlož: teacher_excellent.jpg ]</div>
+  </div>
+
+  <p class="menu-desc">
+    Procvič si konfiguraci sítí pod dohledem<br>
+    <strong>Ing. Martina Buriánka</strong> — milovníka Cisco Packet Traceru.
+    Správně nakonfiguruj třídu sítě, masku, gateway a IP adresy!
+  </p>
+
+  <div class="count-selector">
+    <span class="count-label">POČET PŘÍKLADŮ:</span>
+    <div class="count-btns" id="count-btns">
+      <button class="count-btn" data-val="3">3</button>
+      <button class="count-btn" data-val="5">5</button>
+      <button class="count-btn selected" data-val="10">10</button>
+      <button class="count-btn" data-val="15">15</button>
+      <button class="count-btn" data-val="20">20</button>
+    </div>
+  </div>
+
+  <button class="btn-start" id="btn-start">▶ SPUSTIT HRU</button>
+</div>
+
+<!-- GAME -->
+<div id="screen-game" class="screen">
+  <div class="topbar">
+    <span class="topbar-title">BuriTrace</span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <span class="topbar-progress" id="topbar-progress">0 / 0</span>
+  </div>
+
+  <div class="sidebar">
+    <!-- Teacher -->
+    <div class="teacher-panel" id="teacher-panel">
+      <div class="teacher-img-wrap" id="teacher-img-wrap">
+        <div class="teacher-placeholder" id="teacher-placeholder">
+          <div class="ph-icon">🧑‍🏫</div>
+          <div style="font-size:0.65rem">Martin Buriánek</div>
+          <div style="font-size:0.55rem;margin-top:4px;opacity:0.6" id="ph-emotion-hint">[ teacher_medium.jpg ]</div>
+        </div>
+        <img id="teacher-img" src="" alt="Martin Buriánek" style="display:none; position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="emotion-bar" id="emotion-bar">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="emotion-label" id="emotion-label">⚡ MEDIUM</div>
+    </div>
+
+    <!-- Comment -->
+    <div class="teacher-comment" id="teacher-comment">
+      „Tak, žáci — dávejte pozor. Tato síť se sama nenastaví."
+    </div>
+
+    <!-- Score -->
+    <div class="score-meter">
+      <div class="score-label">SKÓRE</div>
+      <div class="score-hearts" id="score-hearts"></div>
+    </div>
+
+    <!-- Streak -->
+    <div class="streak-display">Série: <span id="streak-display">0</span> 🔥</div>
+
+    <!-- Timer -->
+    <div class="timer-display">
+      <div class="timer-label">ČAS</div>
+      <div class="timer-value" id="timer-value">60</div>
+    </div>
+  </div>
+
+  <div class="game-main" id="game-main">
+    <!-- injected by JS -->
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="screen-results" class="screen">
+  <div class="result-teacher-placeholder" id="result-teacher-wrap">
+    <div style="font-size:3rem">🏆</div>
+    <div style="font-size:0.7rem;margin-top:6px">Martin Buriánek</div>
+    <div style="font-size:0.55rem;opacity:0.6" id="result-ph-hint">[ teacher_excellent.jpg ]</div>
+  </div>
+  <div class="stars-display" id="result-stars"></div>
+  <div class="result-title" id="result-title"></div>
+  <div class="result-subtitle" id="result-subtitle"></div>
+  <div class="result-stats">
+    <div class="result-stat">
+      <div class="result-stat-val" id="res-correct">0</div>
+      <div class="result-stat-key">SPRÁVNĚ</div>
+    </div>
+    <div class="result-stat">
+      <div class="result-stat-val" id="res-total">0</div>
+      <div class="result-stat-key">CELKEM</div>
+    </div>
+    <div class="result-stat">
+      <div class="result-stat-val" id="res-pct">0%</div>
+      <div class="result-stat-key">ÚSPĚŠNOST</div>
+    </div>
+    <div class="result-stat">
+      <div class="result-stat-val" id="res-time">0s</div>
+      <div class="result-stat-key">∅ ČAS</div>
+    </div>
+  </div>
+  <button class="btn-restart" id="btn-restart">↺ HRÁT ZNOVU</button>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script src="buritrace.js"></script>
+</body>
+</html>
