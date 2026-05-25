@@ -765,7 +765,6 @@ function renderTask() {
             <option value="">-- vyber --</option>
             ${opts}
           </select>
-          ${f.hint ? `<span class="field-hint">💡 ${f.hint}</span>` : ''}
         </div>`;
     } else {
       fieldsHtml += `
@@ -773,7 +772,6 @@ function renderTask() {
           <label class="field-label">${f.label}</label>
           <input class="field-input" id="field-${f.key}" name="${f.key}"
             type="text" placeholder="..." autocomplete="off" spellcheck="false">
-          ${f.hint ? `<span class="field-hint">💡 ${f.hint}</span>` : ''}
         </div>`;
     }
   });

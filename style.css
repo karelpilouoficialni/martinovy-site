@@ -519,12 +519,6 @@ body::before {
   75%{transform:translateX(6px)}
 }
 
-.field-hint {
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  font-family: 'Share Tech Mono', monospace;
-}
-
 /* SELECT */
 .field-select {
   background: var(--bg-dark);
