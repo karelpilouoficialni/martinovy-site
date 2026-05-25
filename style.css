@@ -776,3 +776,93 @@ body::before {
 
 /* FIELD FULL WIDTH */
 .field-full { grid-column: 1/-1; }
+
+/* HELP BUTTON */
+.btn-help {
+  background: transparent;
+  border: 1px solid rgba(0,230,118,0.3);
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-help:hover {
+  border-color: var(--green);
+  color: var(--green);
+  box-shadow: 0 0 10px rgba(0,230,118,0.15);
+}
+
+/* CHEATSHEET OVERLAY */
+.cheatsheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+.cheatsheet-overlay.open {
+  background: rgba(0,0,0,0.75);
+  pointer-events: auto;
+}
+
+.cheatsheet-modal {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  transform: scale(0.85) translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.cheatsheet-overlay.open .cheatsheet-modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.cheatsheet-img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(0,188,235,0.2);
+  border: 2px solid rgba(26,115,232,0.3);
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+.cheatsheet-img.zoomed {
+  cursor: zoom-out;
+  transform: scale(1.8);
+}
+
+.cheatsheet-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--cisco-accent);
+  background: var(--bg-panel);
+  color: var(--cisco-accent);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 1;
+  line-height: 1;
+}
+.cheatsheet-close:hover {
+  background: var(--cisco-accent);
+  color: #fff;
+  transform: scale(1.1);
+}

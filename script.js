@@ -986,3 +986,33 @@ document.getElementById('btn-menu').addEventListener('click', () => {
   clearInterval(state.timerInterval);
   showScreen('menu');
 });
+
+document.getElementById('btn-help').addEventListener('click', () => {
+  document.getElementById('cheatsheet-overlay').classList.add('open');
+});
+
+document.getElementById('cheatsheet-close').addEventListener('click', () => {
+  document.getElementById('cheatsheet-overlay').classList.remove('open');
+});
+
+document.getElementById('cheatsheet-overlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    document.getElementById('cheatsheet-overlay').classList.remove('open');
+  }
+});
+
+document.querySelector('.cheatsheet-img').addEventListener('click', (e) => {
+  e.stopPropagation();
+  e.currentTarget.classList.toggle('zoomed');
+});
+
+document.querySelector('.cheatsheet-img').addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const img = e.currentTarget;
+  const current = img.classList.contains('zoomed') ? 1.8 : 1;
+  const delta = e.deltaY > 0 ? -0.3 : 0.3;
+  const next = Math.max(1, Math.min(4, current + delta));
+  if (next > 1) img.classList.add('zoomed');
+  else img.classList.remove('zoomed');
+  img.style.transform = `scale(${next})`;
+}, { passive: false });
