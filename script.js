@@ -745,8 +745,8 @@ function renderTask() {
   document.getElementById('topbar-progress').textContent =
     (state.current+1) + ' / ' + state.total;
 
-  // Emotion
-  const emotionPct = state.total ? (state.score / state.total) * 100 : 50;
+  // Emotion (start at medium, then based on performance)
+  const emotionPct = state.score > 0 ? (state.score / state.total) * 100 : 50;
   updateTeacher(getEmotion(emotionPct));
   renderHearts();
   document.getElementById('streak-display').textContent = state.streak;
@@ -979,5 +979,10 @@ document.getElementById('btn-start').addEventListener('click', () => {
 });
 
 document.getElementById('btn-restart').addEventListener('click', () => {
+  showScreen('menu');
+});
+
+document.getElementById('btn-menu').addEventListener('click', () => {
+  clearInterval(state.timerInterval);
   showScreen('menu');
 });

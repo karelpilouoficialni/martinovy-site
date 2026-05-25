@@ -55,15 +55,15 @@ body::before {
 
 /* ─── MENU SCREEN ─── */
 #screen-menu {
+  display: none;
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   text-align: center;
 }
-#screen-menu.active { display:flex; }
+#screen-menu.active { display: flex; }
 
 .logo-wrap {
   margin-bottom: 2rem;
@@ -198,13 +198,13 @@ body::before {
 
 /* ─── GAME SCREEN ─── */
 #screen-game {
+  display: none;
   min-height: 100vh;
-  display: grid;
   grid-template-columns: 280px 1fr;
   grid-template-rows: auto 1fr;
   gap: 0;
 }
-#screen-game.active { display:grid; }
+#screen-game.active { display: grid; }
 
 @media(max-width: 900px) {
   #screen-game.active { display:flex; flex-direction:column; }
@@ -227,6 +227,24 @@ body::before {
   font-family: 'Share Tech Mono', monospace;
   letter-spacing: 2px;
 }
+.btn-menu {
+  background: transparent;
+  border: 1px solid rgba(26,115,232,0.3);
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-menu:hover {
+  border-color: var(--cisco-accent);
+  color: var(--cisco-accent);
+  box-shadow: 0 0 10px rgba(0,188,235,0.15);
+}
+
 .topbar-progress {
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -595,15 +613,15 @@ body::before {
 
 /* ─── RESULTS SCREEN ─── */
 #screen-results {
+  display: none;
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   text-align: center;
 }
-#screen-results.active { display:flex; }
+#screen-results.active { display: flex; }
 
 .result-teacher {
   width: 200px;
