@@ -1003,16 +1003,23 @@ document.getElementById('cheatsheet-overlay').addEventListener('click', (e) => {
 
 document.querySelector('.cheatsheet-img').addEventListener('click', (e) => {
   e.stopPropagation();
-  e.currentTarget.classList.toggle('zoomed');
+  const img = e.currentTarget;
+  img.classList.toggle('zoomed');
+  img.style.transform = '';
 });
 
 document.querySelector('.cheatsheet-img').addEventListener('wheel', (e) => {
   e.preventDefault();
   const img = e.currentTarget;
-  const current = img.classList.contains('zoomed') ? 1.8 : 1;
+  const match = img.style.transform.match(/scale\(([\d.]+)\)/);
+  const current = match ? parseFloat(match[1]) : (img.classList.contains('zoomed') ? 1.8 : 1);
   const delta = e.deltaY > 0 ? -0.3 : 0.3;
   const next = Math.max(1, Math.min(4, current + delta));
-  if (next > 1) img.classList.add('zoomed');
-  else img.classList.remove('zoomed');
-  img.style.transform = `scale(${next})`;
+  if (next === 1) {
+    img.classList.remove('zoomed');
+    img.style.transform = '';
+  } else {
+    img.classList.add('zoomed');
+    img.style.transform = `scale(${next})`;
+  }
 }, { passive: false });

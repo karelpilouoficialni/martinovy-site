@@ -843,9 +843,9 @@ body::before {
 }
 
 .cheatsheet-close {
-  position: absolute;
-  top: -14px;
-  right: -14px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -858,8 +858,14 @@ body::before {
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
-  z-index: 1;
+  z-index: 2001;
   line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+.cheatsheet-overlay.open .cheatsheet-close {
+  opacity: 1;
+  pointer-events: auto;
 }
 .cheatsheet-close:hover {
   background: var(--cisco-accent);
